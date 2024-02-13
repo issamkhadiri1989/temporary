@@ -1,0 +1,26 @@
+{% use 'form/cart_item.html.twig' %}
+{% block _cart_items_entry_row %}
+    {% set product = form.vars.value.product %}
+    <tr class="">
+        <td class="">
+            <div class="product-info">
+                <img width="80" src="https://placehold.co/80" alt=""/>
+                <a href="#!">{{ product.name | upper }}</a>
+            </div>
+        </td>
+        <td class="">${{ product.price | number_format(2, ',', ' ') }}</td>
+        <td>
+            <div class="single-product-details">
+                <div class="product-quantity">
+                    {{ form_row(form) }}
+                </div>
+            </div>
+        </td>
+        <td class="">
+            <button class="product-remove" type="button">Remove</button>
+        </td>
+    </tr>
+{% endblock %}
+{% block _cart_items_entry_quantity_row %}
+    {{ block('_cart_item_quantity_row') }}
+{% endblock %}

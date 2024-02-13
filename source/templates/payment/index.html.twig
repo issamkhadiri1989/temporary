@@ -1,0 +1,74 @@
+{% extends 'layout.html.twig' %}
+{% form_theme payment 'form/payment_fields.html.twig' %}
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Checkout</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">checkout</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="page-wrapper">
+        <div class="checkout shopping">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="block">
+                            <h4 class="widget-title">Payment</h4>
+                            <div class="checkout-product-details">
+                                <div class="payment">
+                                    <div class="card-details">
+                                        {{ form_start(payment, {'attr': {'class' : 'checkout-form' }}) }}
+                                        {{ form_row(payment) }}
+                                        {{ form_end(payment) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-checkout-details">
+                            {# <div class="block">
+                                    <h4 class="widget-title">Order Summary</h4>
+                                    {% for item in cart.items %}
+                                        {{ component('CartItem', {productName: item.product.name, price: item.price, quantity: item.quantity }) }}
+                                    {% endfor %}
+                                    <div class="discount-code">
+                                        <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal" href="#!">enter
+                                                it here</a></p>
+                                    </div>
+                                    <ul class="summary-prices">
+                                        <li>
+                                            <span>Subtotal:</span>
+                                            <span class="price">$190</span>
+                                        </li>
+                                        <li>
+                                            <span>Shipping:</span>
+                                            <span>Free</span>
+                                        </li>
+                                    </ul>
+                                    <div class="summary-total">
+                                        <span>Total</span>
+                                        <span>$250</span>
+                                    </div>
+                                    <div class="verified-icon">
+                                        <img src="{{ asset('front/images/shop/verified.png') }}">
+                                    </div>
+                                </div> #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
